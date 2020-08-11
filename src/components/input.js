@@ -1,11 +1,11 @@
 import React from 'react';
 import '../css/main.css';
 
-const Search = () => {
+const Input = () => {
     return (
         <div className={"input"}>
-        <input   placeholder={"Enter the name or number of the pokemon"}/>
+            <input placeholder={"Enter the name or number of the pokemon"}/>
         </div>
     )
 }
-export default Search;
+export default Input;

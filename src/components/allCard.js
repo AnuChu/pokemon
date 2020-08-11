@@ -5,7 +5,7 @@ import CardPokemonMini from "./cardPokemonMini";
 const AllCard = () => {
     return (
         <div className={"all-card"}>
-        <CardPokemonMini/>
+            <CardPokemonMini/>
         </div>
     )
 }

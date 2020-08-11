@@ -4,7 +4,7 @@ import '../css/main.css';
 const Title = () => {
     return (
         <div className={"logo"}>
-<img  src="/img/logo.png" />
+            <img src="/img/logo.png" alt=""/>
         </div>
     )
 }
