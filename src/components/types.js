@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Loading from "./loading";
 import '../css/main.css';
 
 const Types = () => {
@@ -25,7 +26,7 @@ const Types = () => {
 //     {types.results.map(type =>
 // }
 
-if (fetching) {return(<h1>loading</h1>)}
+if (fetching) {return(<Loading/>)}
 else
     return(
         <div className={"types-block"}>

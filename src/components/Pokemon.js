@@ -1,19 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import '../css/main.css';
+import Loading from "./loading";
 
-
-const CardPokemon = () => {
+const Pokemon = () => {
 
     const [data, setData] = useState([])
+    const [fetching, setFetching] = useState(true)
 
     useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon/2')
+        fetch(`https://pokeapi.co/api/v2/pokemon/6`)
             .then(response => {
                 return response.json();
             })
             .then(data => {
                 console.log(data);
                 setData(data)
+                setFetching(false)
             })
             .catch(error => alert(error))
     }, []);
@@ -24,14 +26,20 @@ const imageCount = (id) =>{
     else if (id < 100) {return "0"+id}
     else return id
 }
-
-    return (
+    if (fetching) {return(<Loading />)}
+    else
+        return (
         <div className={"card-pokemon"}>
             <div className={"card-pokemon-block"}>
 
                 <div className={"card-pokemon-block-1"}>
                     <div className={"card-pokemon-name"}>
-                        №{data.id} {data.name}
+                        <div className={"card-pokemon-name-number"}>
+                        №{data.id}
+                    </div>
+                    <div className={"card-pokemon-name-name"}>
+                        {data.name}
+                    </div>
                     </div>
                     <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${imageCount(data.id)}.png`} alt=""/>
                 </div>
@@ -42,7 +50,8 @@ const imageCount = (id) =>{
                         Bla-bla-bla</p>
                     <div className={"card-pokemon-title"}> &nbsp;Type&nbsp; </div>
                     <p className={"card-pokemon-subtitle"}>
-                        {/*{data.}*/}
+                        {data['types'][0]['type']['name']}<br/>
+                        {data['types'][1]['type']['name']}<br/>
                     </p>
                     <div className={"card-pokemon-title"}> &nbsp;Characteristic&nbsp;</div>
                     <p className={"card-pokemon-subtitle"}>
@@ -59,4 +68,4 @@ const imageCount = (id) =>{
         </div>
     )
 }
-export default CardPokemon;
+export default Pokemon;

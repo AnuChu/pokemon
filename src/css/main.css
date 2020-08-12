@@ -21,8 +21,13 @@ html {
     --shadow: rgb(255, 214, 0);
     --fon: rgba(193, 228, 232, 0.8);
     --border: rgba(255, 255, 255, 0.57);
-    /* ---font-size--- */
+    /* ---font--- */
     --font: Times New Roman;
+    /* ---font-size--- */
+    --text-size-title: ;
+    --text-size-type:;
+    --text-size-text:;
+
 
 }
 /* ---animation--- */
@@ -122,8 +127,9 @@ input {
     border: 3px solid #385CA8;
     color: var(--text);
     margin: 4% 0 2% 0;
-    padding: 6px 0 6px 0;
+    padding: 1.5% 0 1.5% 0;
     text-align: center;
+    font-size: var(--text-size-text);
 }
 
 /* ---types--- */
@@ -149,6 +155,7 @@ text-align: center;
     color: var(--text);
     font-weight: bold;
     font-family: var(--font);
+    font-size: var(--text-size-type);
 
 }
 
@@ -241,22 +248,39 @@ text-align: center;
 }
 
 .card-pokemon-block-1 {
-    flex-basis: 50%;
+    flex-basis: 40%;
     padding: 2%;
+}
+.card-pokemon-block-1 img{
+ width: 350px;
+    height: auto;
 }
 
 .card-pokemon-block-2 {
     border-left: 2px solid #385CA8;
-    flex-basis: 50%;
+    flex-basis: 60%;
     padding: 2%;
 }
 
 .card-pokemon-name {
+    display: flex;
     text-transform: capitalize;
     color: var(--text);
     font-weight: bold;
     font-size: 30px;
     margin: 1%;
+}
+
+.card-pokemon-name-number {
+    border-left: 2px solid var(--text);
+    border-right: 2px solid var(--text);
+    flex-basis: 10%;
+    padding: 2%;
+}
+
+.card-pokemon-name-name {
+    flex-basis: 90%;
+    padding: 2%;
 }
 
 .card-pokemon-title{
@@ -272,4 +296,32 @@ text-align: center;
 }
 Link, a, Link:hover, Link:focus, a:focus{
     outline: none;
+}
+
+.loading{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    color: var(--text);
+    font-weight: bold;
+    font-size: 45px;
+}
+.loading:hover{
+    filter: drop-shadow(0px 0px 5px rgb(255, 214, 0));
+}
+.loading img{
+    width: 40px;
+    height: auto;
+    animation: loading 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
