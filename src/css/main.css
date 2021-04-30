@@ -82,7 +82,8 @@ html {
     justify-content: center;
     position: relative;
     animation: fadeIn 800ms ease-in-out 150ms both;
-    margin: 5%;
+    margin: 50px auto;
+    max-width: 1200px;
 }
 
 @keyframes fadeIn {
@@ -95,7 +96,7 @@ html {
 }
 
 .main {
-    padding: 2%;
+    padding: 30px;
 }
 
 /* ---logo--- */
@@ -150,7 +151,7 @@ text-align: center;
 
 .type {
     text-transform: capitalize;
-    margin: 2%;
+    margin: 5px;
     text-align: center;
     color: var(--text);
     font-weight: bold;
