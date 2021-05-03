@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "normalize.css";
+
 
 ::-webkit-scrollbar {
     width: 0;
@@ -22,53 +24,58 @@ html {
     --fon: rgba(193, 228, 232, 0.8);
     --border: rgba(255, 255, 255, 0.57);
     /* ---font--- */
-    --font: Times New Roman;
+    font-family: 'Quantico', sans-serif;
+    --font: 'Quantico', sans-serif;
     /* ---font-size--- */
-    --text-size-title: ;
-    --text-size-type:;
-    --text-size-text:;
+    /*--text-size-title: ;*/
+    /*--text-size-type:;*/
+    /*--text-size-text:;*/
 
 
 }
+
 /* ---animation--- */
 
 @keyframes animatedBackground {
-0  {
-    background-position: 0 0
+    0% {
+        background-position: 0 0
+    }
+    100% {
+        background-position: -600px 600px /* анимируем свойство background-position */
+    }
 }
-100%  {
-    background-position: -600px 600px /* анимируем свойство background-position */
-}
-}
+
 /* Mozilla Firefox 5.0+ */
 @-moz-keyframes animatedBackground {
 
-0  {
-    background-position: 0 0
+    0% {
+        background-position: 0 0
+    }
+    100% {
+        background-position: -600px 600px
+    }
 }
-100%  {
-    background-position: -600px 600px
-}
-}
+
 /* Safari 4.0+, Chrome 4.0+ */
 @-webkit-keyframes animatedBackground {
 
-0  {
-    background-position: 0 0
+    0% {
+        background-position: 0 0
+    }
+    100% {
+        background-position: -600px 600px
+    }
 }
-100%  {
-    background-position: -600px 600px
-}
-}
+
 /* Opera 12.0+ */
 @-o-keyframes animatedBackground {
 
-0  {
-    background-position: 0 0
-}
-100%  {
-    background-position: -600px 600px
-}
+    0% {
+        background-position: 0 0
+    }
+    100% {
+        background-position: -600px 600px
+    }
 }
 
 /* ---wrapper--- */
@@ -82,7 +89,7 @@ html {
     justify-content: center;
     position: relative;
     animation: fadeIn 800ms ease-in-out 150ms both;
-    margin: 50px auto;
+    margin: 25px auto;
     max-width: 1200px;
 }
 
@@ -112,6 +119,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 25px 0;
 }
 
 input:focus {
@@ -123,29 +131,41 @@ input:focus {
 }
 
 input {
-    width: 80%;
+    max-width: 760px;
+    width: 100%;
     border-radius: 10px;
     border: 3px solid #385CA8;
     color: var(--text);
-    margin: 4% 0 2% 0;
-    padding: 1.5% 0 1.5% 0;
+    padding: 10px 0;
     text-align: center;
-    font-size: var(--text-size-text);
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* ---types--- */
-.types-block {
-text-align: center;
-    align-items: center;
-    justify-content: center;
 
+.type-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
 }
-.types-block button{
+
+.types-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 775px;
+}
+
+.types-block button {
     outline: none;
     border: none;
     background: none;
 }
-.types-block button:focus, button:hover{
+
+.types-block button:focus, button:hover {
     filter: drop-shadow(0px 0px 5px rgb(255, 214, 0));
 }
 
@@ -156,8 +176,7 @@ text-align: center;
     color: var(--text);
     font-weight: bold;
     font-family: var(--font);
-    font-size: var(--text-size-type);
-
+    cursor: pointer;
 }
 
 .type img {
@@ -180,7 +199,7 @@ text-align: center;
 
 /* ---card-mini--- */
 
-.card-mini-block{
+.card-mini-block {
     display: flex;
     flex-wrap: wrap;
     margin: 2%;
@@ -189,6 +208,7 @@ text-align: center;
     align-items: center;
     justify-content: center;
 }
+
 .card-mini-title {
     text-transform: capitalize;
     margin: 1%;
@@ -196,7 +216,11 @@ text-align: center;
     color: var(--text);
 }
 
-.card-mini{
+.card-mini, .card-mini a, .card-mini-title {
+    text-decoration: none;
+}
+
+.card-mini {
     margin: 1%;
     padding: 2%;
     background: white;
@@ -204,62 +228,80 @@ text-align: center;
     text-align: center;
     align-items: center;
     justify-content: center;
-
 }
-.card-mini:hover{
+
+.card-mini:hover {
     filter: drop-shadow(0px 0px 5px rgb(255, 214, 0));
 }
-.card-mini img{
+
+.card-mini img {
     width: 200px;
     height: auto;
 }
-.card-mini-type img{
-    width: 20%;
+
+.card-mini-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card-mini-type img {
+    width: 30px;
     height: auto;
 }
 
-.mini-type-grass:hover {
+.mini-type {
     padding: 1%;
-    background: green;
-    color: white;
     border-radius: 15px;
+    background: transparent;
 }
 
-.mini-type-poison:hover {
-    padding: 1%;
-    background: purple;
-    color: white;
-    border-radius: 15px;
-}
+/*.mini-type.grass:hover {*/
+/*    background: green;*/
+/*    color: white;*/
+/*}*/
+
+/*.mini-type:hover {*/
+/*    color: white;*/
+/*}*/
+
+/*.mini-type.poison:hover {*/
+/*    background: purple;*/
+/*}*/
+
 
 /* ---card-pokemon--- */
+
 .card-pokemon {
     background: white;
     border-radius: 15px;
-    border: 8px double rgba(255, 255, 255, 0.5);
+    border: 8px double rgba(56, 92, 168, 0.28);
     display: flex;
     position: relative;
     animation: fadeIn 800ms ease-in-out 150ms both;
-    margin: 5%;
+    margin: 30px 0;
 }
 
 .card-pokemon-block {
     display: flex;
     padding: 2%;
+    width: 100%;
+    justify-content: center;
 }
 
 .card-pokemon-block-1 {
-    flex-basis: 40%;
+    flex-basis: fit-content;
     padding: 2%;
 }
-.card-pokemon-block-1 img{
- width: 350px;
+
+.card-pokemon-block-1 img {
+    width: 350px;
     height: auto;
 }
 
 .card-pokemon-block-2 {
-    border-left: 2px solid #385CA8;
-    flex-basis: 60%;
+    /*border-left: 2px solid #385CA8;*/
+    flex-basis: 50%;
     padding: 2%;
 }
 
@@ -284,10 +326,25 @@ text-align: center;
     padding: 2%;
 }
 
-.card-pokemon-title{
+.card-pokemon-title {
     display: flex;
     margin: 5px;
     align-items: center;
+}
+
+.card-pokemon-subtitle a{
+    text-decoration: none;
+}
+
+.card-pokemon-subtitle.types {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-pokemon-subtitle.types img {
+    width: 30px;
+    height: auto;
+    margin: 5px;
 }
 
 .card-pokemon-title:after, .card-pokemon-title:before {
@@ -295,11 +352,12 @@ text-align: center;
     flex: 1;
     border-bottom: 2px solid var(--text);
 }
-Link, a, Link:hover, Link:focus, a:focus{
+
+Link, a, Link:hover, Link:focus, a:focus {
     outline: none;
 }
 
-.loading{
+.loading {
     display: flex;
     text-align: center;
     align-items: center;
@@ -309,10 +367,12 @@ Link, a, Link:hover, Link:focus, a:focus{
     font-weight: bold;
     font-size: 45px;
 }
-.loading:hover{
+
+.loading:hover {
     filter: drop-shadow(0px 0px 5px rgb(255, 214, 0));
 }
-.loading img{
+
+.loading img {
     width: 40px;
     height: auto;
     animation: loading 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;

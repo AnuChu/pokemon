@@ -5,7 +5,7 @@ const Loading = () => {
 
     return (
         <div className={"loading"}>
-           <span> L<img src="/img/loading.png" alt=""/>ading</span>
+            <span> L<img src="/img/loading.png" alt=""/>ading</span>
         </div>
     )
 }
