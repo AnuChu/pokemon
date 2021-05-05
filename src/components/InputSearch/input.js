@@ -1,15 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../css/main.css';
 
-const Input = () => {
+const Input = (props) => {
     const [query, setQuery] = useState("")
-    return (
-        <form className={"input"}>
-            <input
-                name="serch"
-                placeholder={"Enter the name or number of the pokemon"}
-                onChange={e => setQuery(e.target.value)}/>
 
+    useEffect(() => {
+        props.setFilteredData(props.data.filter((pokemon) => pokemon.name.startsWith(query)))
+    }, [query])
+
+    const SearchPokemon = () => {
+    }
+
+    return (
+        <form className={"input"} onSubmit={SearchPokemon}>
+            <input
+                name="search"
+                placeholder={"Enter the name or number of the pokemon"}
+                value={query}
+                onChange={e => setQuery(e.target.value)}/>
         </form>
     )
 }
